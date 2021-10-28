@@ -1,0 +1,12 @@
+name = "launchdarkly-cloudflare-worker-template"
+type = "webpack"
+webpack_config = "webpack.config.js"
+compatibility_date = "2021-10-14"
+workers_dev = true
+route = ""
+zone_id = ""
+account_id = ""
+kv_namespaces = []
+
+[site]
+bucket = "./public"
