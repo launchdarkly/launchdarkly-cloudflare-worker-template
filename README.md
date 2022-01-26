@@ -1,4 +1,4 @@
-# ʕ •ᴥ•ʔ `launchdarkly-cloudflare-worker-template`
+# `launchdarkly-cloudflare-worker-template`
 
 A template for using the LaunchDarkly Cloudflare Edge SDK.
 
