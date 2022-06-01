@@ -1,5 +1,5 @@
-const { getAssetFromKV } = require('@cloudflare/kv-asset-handler')
-const { init } = require('launchdarkly-cloudflare-edge-sdk')
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
+import { init } from 'launchdarkly-cloudflare-edge-sdk'
 
 let ldClient
 
