@@ -1,12 +1,26 @@
-name = "launchdarkly-cloudflare-worker-template"
-type = "webpack"
-webpack_config = "webpack.config.js"
-compatibility_date = "2021-10-14"
-workers_dev = true
-route = ""
-zone_id = ""
-account_id = ""
-kv_namespaces = []
+main = "worker/script.js"
+
+compatibility_date = "2022-10-11"
+account_id = "<CLOUDFLARE_ACCOUNT_ID>"
+
+## KV namespaces
+# https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
+#
+# Run `npx wrangler kv:namespace create LD_KV` to generate the KV. Use the returned value to populate the "id".
+#
+# Run `npx wrangler kv:namespace create LD_KV --preview` to generate the preview KV.
+# Use the returned value to populate the "preview_id".
+kv_namespaces = [
+   {binding = "LD_KV", id="<LD_KV NAMESPACE ID>", preview_id = "<LD_KV NAMESPACE PREVIEW ID>"}
+]
 
 [site]
 bucket = "./public"
+
+[build]
+command = "npm run build"
+
+[vars]
+LD_CLIENT_SIDE_ID="<YOUR_CLIENT_SIDE_ID>"
+# Consider using a wrangler secret for this in production environments.
+# https://developers.cloudflare.com/workers/platform/environment-variables/#adding-secrets-via-wrangler
